@@ -11,7 +11,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
 			rel="stylesheet" />
 		<!-- font awesome -->
 		<link
@@ -28,11 +28,60 @@
 				<img src="images/logo.svg" alt="" />
 			</div>
 			<div class="headerRight">
-				<a href="#"
-					>Sign/Login <i class="fa-solid fa-right-to-bracket"></i></i
-				></a>
+				<a href="#">Setting <i class="fa-solid fa-right-to-bracket"></i></a>
 			</div>
 		</header>
+		<main>
+			<h1>How's the sky looking today?</h1>
+			<div class="search">
+				<div class="inner">
+					<img src="images/icon-search.svg" alt="" />
+					<input
+						type="text"
+						placeholder="Search for a place..."
+						id="search-input" />
+				</div>
+				<button onclick="searchWeather()">Search</button>
+			</div>
+			<p class="message" id="error-msg">No search result found!</p>
+		</main>
+		<section class="main-section hidden" id="weather-container">
+			<div class="item1">
+				<div class="Weather-right">
+					<h2 class="city cityName"></h2>
+					<p id="currentDate"></p>
+				</div>
+				<div class="Weather-left">
+					<p id="currentTemp"></p>
+				</div>
+			</div>
+			<div class="item2 class" id="hourly-section">
+				<h2 class="houly-title">Hourly Forecast</h2>
+				<div id="hourly-container" class="hourly-grid"></div>
+			</div>
+			<div class="item3">
+				<div class="card">
+					<p>Feels Like</p>
+					<p class="card-imp" id="feelsLike"></p>
+				</div>
+				<div class="card">
+					<p>Humidity</p>
+					<p class="card-imp" id="humidity"></p>
+				</div>
+				<div class="card">
+					<p>Wind</p>
+					<p class="card-imp" id="wind"></p>
+				</div>
+				<div class="card">
+					<p>Precipation</p>
+					<p class="card-imp" id="precipation"></p>
+				</div>
+			</div>
+			<div class="item4">
+				<h3>Daily Forecast</h3>
+				<div class="forecast-container" id="forecast-container"></div>
+			</div>
+		</section>
 		<script src="./app.js"></script>
 	</body>
 </html>
