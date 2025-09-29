@@ -37,6 +37,7 @@ async function searchWeather() {
 	const city = document.getElementById('search-input').value.trim();
 	const errorMsg = document.getElementById('error-msg');
 	const container = document.getElementById('weather-container');
+	const loader = document.getElementById('loader-overlay');
 
 	if (!city) {
 		errorMsg.textContent = 'Type a city name and press Search!';
@@ -44,6 +45,8 @@ async function searchWeather() {
 	}
 
 	try {
+		loader.classList.remove('hidden');
+		container.classList.add('hidden');
 		errorMsg.textContent = '';
 		// 1) Get city coordinates
 		const geoRes = await fetch(
@@ -166,5 +169,7 @@ async function searchWeather() {
 		console.error(error);
 		errorMsg.textContent = `Something went wrong!`;
 		container.classList.add('hidden');
+	} finally {
+		loader.classList.add('hidden');
 	}
 }
